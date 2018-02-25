@@ -99,44 +99,80 @@
 
 
 
-class Solution(object):        
-    def tree2str(self, t):
-        """
-        :type t: TreeNode
-        :rtype: str
-        """
-        if not t: return ""
+# class Solution(object):        
+#     def tree2str(self, t):
+#         """
+#         :type t: TreeNode
+#         :rtype: str
+#         """
+#         if not t: return ""
         
-        if not t.left and not t.right:
-            return str(t.val)
+#         if not t.left and not t.right:
+#             return str(t.val)
 
-        if not t.right:
-            return str(t.val) + "(" + self.tree2str(t.left) + ")"
+#         if not t.right:
+#             return str(t.val) + "(" + self.tree2str(t.left) + ")"
 
-        return str(t.val) + "(" self.tree2str(t.left) ")(" + self.tree2str(t.right) + ")" 
+#         return str(t.val) + "(" self.tree2str(t.left) ")(" + self.tree2str(t.right) + ")" 
+
+
+# class Solution(object):
+#     def buildTree(self, inorder, postorder):
+#         """
+#         :type inorder: List[int]
+#         :type postorder: List[int]
+#         :rtype: TreeNode
+#         """
+#         if not len(inorder) == len(postorder): return None
+#         indic = {}
+#         for i, x in enumerate(inorder): indic[x] = i
+#         return self.helper(indic, postorder, 0, len(inorder)-1, 0, len(inorder)-1)
+    
+#     def helper(self, indic, postorder, inLow, inHigh, poLow, poHigh):
+#         if poLow > poHigh or inLow > inHigh: return None
+        
+#         node = TreeNode(postorder[poHigh])
+#         inIdx = indic[node.val]
+
+#         left_length = inIdx - inLow
+#         node.left = self.helper(indic, postorder, inLow, inIdx-1,
+#             poLow, poLow+left_length-1)
+#         node.right = self.helper(indic, postorder, inIdx+1, inHigh,
+#             poHigh+inIdx-inHigh, poHigh-1) 
+#         return node
 
 
 class Solution(object):
-    def buildTree(self, inorder, postorder):
+    def calculate(self, s):
         """
-        :type inorder: List[int]
-        :type postorder: List[int]
-        :rtype: TreeNode
+        :type s: str
+        :rtype: int
         """
-        if not len(inorder) == len(postorder): return None
-        indic = {}
-        for i, x in enumerate(inorder): indic[x] = i
-        return self.helper(0, len(inorder)-1, 0, len(inorder)-1, indic, postorder)
-    
-    def helper(self, indic, postorder, inLow, inHigh, poLow, poHigh):
-        if poLow > poHigh or inLow > inHigh: return None
+        if not s: return 0
         
-        node = TreeNode(postorder[poHigh])
-        inIdx = indic[node.val]
+        stack = []
+        rst, sign, i = 0, 1, 0
+        while i < len(s):
+            x = s[i]
+            if x.isdigit():
+                start = i
+                while i < len(s) and s[i].isdigit(): i += 1
+                num = int(s[start:i])
+                rst += sign * num
+            elif x == "-":
+                sign = -1
+            elif x == "+":
+                sign = 1
+            elif x == "(":
+                stack.append(rst)
+                stack.append(sign)
+                rst, sign = 0, 1
+            elif x == ")":
+                rst = rst*stack.pop() + stack.pop()
+            i += 1
+        return rst
 
-        left_length = i
-        node.left = self.helper(poLow, poLow+left_length-1, inLow, inIdx-1, 
-                               indic, postorder)
-        node.right = self.helper(poLow+inIdx-inHigh, poHigh-1, inIdx+1, inHigh,
-                                indic, postorder) 
-        return node
+##### Testing ##########
+print Solution().calculate("2-1 + 2")
+print Solution().calculate("((4+5+2)- 3) + (6)")
+print Solution().calculate("(1+(4+5+2)-3)+(6+8)")
