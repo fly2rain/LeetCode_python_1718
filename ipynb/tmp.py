@@ -1,178 +1,59 @@
-# ##### evaluate the two methods creating the 2-d lists #######
-# import time 
-# NN   = 1000
-# m, n = 10, 20
-
-# # Alg 1: [ [None] * m ]  * n 
-# start = time.clock ()
-# for i in xrange (NN):
-#     tmp = [ [None]*n ] * m
-# print time.clock () - start
-
-# # Alg 2:  [ [None] * m ]  * n 
-# start = time.clock ()
-# for i in xrange (NN):
-#     tmp = [ [None for j in xrange(n)] for k in xrange (m)  ]
-# print time.clock () - start
-# # Conclusion: Alg 2 is much better than Alg 1 in speed
-
-
-# def longestCommonSubstring (S, T):
-#     """
-#     : type S: str
-#     : type T: str
-#     : rtype: str
-#     """
-#     m, n = len(S), len(T)
-#     DP   = [ [0] * n  for i in xrange (m) ]
-    
-#     z   = 0
-#     rst = ''
-#     for i in xrange (m):
-#         for j in xrange (n):
-#             if S[i] == T[j]:
-#                 # set the DP value 
-#                 if i == 0 or j == 0:
-#                     DP[i][j] = 1
-#                 else:
-#                     DP[i][j] = DP[i-1][j-1] + 1
-                  
-#                 # check whether DP[i][j] is the longest sub string
-#                 if DP[i][j] > z:
-#                     z   = DP[i][j]
-#                     rst = S[i-z+1 : i+1]
-#             else:
-#                 DP[i][j] = 0                 
-#     return rst
-
-
-
-# def longestCommonSubstring_v2 (S, T):
-#     """
-#     : type S: str
-#     : type T: str
-#     : rtype: str
-#     """
-#     m, n = len(S), len(T)
-#     DP   = [ [0] * (n+1) for i in xrange (m+1) ]
-    
-#     z   = 0
-#     rst = ''
-#     for i in xrange (1, m+1):
-#         for j in xrange (1, n+1):
-#             if S[i-1] == T[j-1]:
-#                 DP[i][j] = DP[i-1][j-1] + 1
-
-#                 # check whether DP[i][j] is the longest sub string
-#                 if DP[i][j] > z:
-#                     z   = DP[i][j]
-#                     rst = S[i-z : i+1]  
-#             else:
-#                 DP[i][j] = 0 
-#     print z, DP             
-#     return rst 
-
-
-
-#         for i in xrange (1, m+1):
-#         for j in xrange (1, n+1):
-            
-#             if S[i-1] == T[j-1]:
-#                 # if (i-1, j-1) in DP:
-#                 #     DP[(i, j)] = DP[(i-1,j-1)] + 1
-#                 # else:
-#                 #     DP[(i,j)]  = 1
-                
-#                 ## 或者这样的代码更紧凑一些, 但更难看懂一些
-#                 tmp = DP[(i-1,j-1)] if (i-1,j-1) in DP else 0
-#                 DP[(i,j)] = tmp + 1
-
-#                 # check whether DP[i][j] is the longest sub string
-#                 if DP[(i,j)] > z:
-#                     z   = DP[(i,j)]
-#                     rst = S[i-z : i] # 原来和 _v3 的差别是, 在于绝对数值和 index 的区别.      
-#     return rst, z
-
-# ### testing ####################
-# print longestCommonSubstring ('abc', 'zbcd')
-# print longestCommonSubstring_v2 ('abc', 'zbcd')
-
-
-
-# class Solution(object):        
-#     def tree2str(self, t):
-#         """
-#         :type t: TreeNode
-#         :rtype: str
-#         """
-#         if not t: return ""
-        
-#         if not t.left and not t.right:
-#             return str(t.val)
-
-#         if not t.right:
-#             return str(t.val) + "(" + self.tree2str(t.left) + ")"
-
-#         return str(t.val) + "(" self.tree2str(t.left) ")(" + self.tree2str(t.right) + ")" 
-
-
-# class Solution(object):
-#     def buildTree(self, inorder, postorder):
-#         """
-#         :type inorder: List[int]
-#         :type postorder: List[int]
-#         :rtype: TreeNode
-#         """
-#         if not len(inorder) == len(postorder): return None
-#         indic = {}
-#         for i, x in enumerate(inorder): indic[x] = i
-#         return self.helper(indic, postorder, 0, len(inorder)-1, 0, len(inorder)-1)
-    
-#     def helper(self, indic, postorder, inLow, inHigh, poLow, poHigh):
-#         if poLow > poHigh or inLow > inHigh: return None
-        
-#         node = TreeNode(postorder[poHigh])
-#         inIdx = indic[node.val]
-
-#         left_length = inIdx - inLow
-#         node.left = self.helper(indic, postorder, inLow, inIdx-1,
-#             poLow, poLow+left_length-1)
-#         node.right = self.helper(indic, postorder, inIdx+1, inHigh,
-#             poHigh+inIdx-inHigh, poHigh-1) 
-#         return node
-
-
-class Solution(object):
-    def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        if not s: return 0
-        
-        stack = []
-        rst, sign, i = 0, 1, 0
-        while i < len(s):
-            x = s[i]
-            if x.isdigit():
-                start = i
-                while i < len(s) and s[i].isdigit(): i += 1
-                num = int(s[start:i])
-                rst += sign * num
-            elif x == "-":
-                sign = -1
-            elif x == "+":
-                sign = 1
-            elif x == "(":
-                stack.append(rst)
-                stack.append(sign)
-                rst, sign = 0, 1
-            elif x == ")":
-                rst = rst*stack.pop() + stack.pop()
-            i += 1
-        return rst
-
-##### Testing ##########
-print Solution().calculate("2-1 + 2")
-print Solution().calculate("((4+5+2)- 3) + (6)")
-print Solution().calculate("(1+(4+5+2)-3)+(6+8)")
+# Python program to do inorder traversal without recursion and 
+# without stack Morris inOrder Traversal
+ 
+# A binary tree node
+class Node:
+     
+    # Constructor to create a new node
+    def __init__(self, data):
+        self.data = data 
+        self.left = None
+        self.right = None
+ 
+# Iterative function for inorder tree traversal
+def MorrisTraversal(root):
+     
+    # Set current to root of binary tree
+    current = root 
+     
+    while(current is not None):
+         
+        if current.left is None:
+            print current.data ,
+            current = current.right
+        else:
+            #Find the inorder predecessor of current
+            pre = current.left
+            while(pre.right is not None and pre.right != current):
+                pre = pre.right
+  
+            # Make current as right child of its inorder predecessor
+            if(pre.right is None):
+                pre.right = current
+                current = current.left
+                 
+            # Revert the changes made in if part to restore the 
+            # original tree i.e., fix the right child of predecssor
+            else:
+                pre.right = None
+                print current.data ,
+                current = current.right
+             
+# Driver program to test above function
+""" 
+Constructed binary tree is
+            1
+          /   \
+        2      3
+      /  \
+    4     5
+"""
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+ 
+MorrisTraversal(root)
+ 
+# This code is contributed by Naveen Aili
