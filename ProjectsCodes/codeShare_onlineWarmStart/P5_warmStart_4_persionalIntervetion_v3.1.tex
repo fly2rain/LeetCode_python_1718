@@ -1,0 +1,1324 @@
+%% LyX 2.1.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,twoside,UTF8,winfonts]{extarticle}
+\renewcommand{\rmdefault}{ptm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.25cm,rmargin=2.25cm}
+\usepackage{color}
+\definecolor{page_backgroundcolor}{rgb}{1, 1, 1}
+\pagecolor{page_backgroundcolor}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ citecolor=blue, urlcolor=blue, linkcolor=blue}
+\usepackage{breakurl}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\ifx\proof\undefined
+\newenvironment{proof}[1][\protect\proofname]{\par
+\normalfont\topsep6\p@\@plus6\p@\relax
+\trivlist
+\itemindent\parindent
+\item[\hskip\labelsep\scshape #1]\ignorespaces
+}{%
+\endtrivlist\@endpefalse
+}
+\providecommand{\proofname}{Proof}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}% 
+\usepackage{graphicx} 
+\usepackage{url}
+
+%\usepackage{ctex}
+%\usepackage{times}
+%\setmainfont{Times New Roman}
+
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=1pt,partopsep=1pt,parsep=1pt,topsep=1pt}
+\setitemize[1]{itemsep=1pt,partopsep=1pt,parsep=1pt,topsep=1pt}
+\setdescription{itemsep=1pt,partopsep=1pt,parsep=1pt,topsep=1pt}
+
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\def\proof{\noindent{\bf  Proof}: } % 使 proof 粗体
+\def\QEDclosed{\mbox{\rule[0pt]{1.3ex}{1.3ex}}}  \def\endproof{\hspace*{\fill}~\QEDclosed\par\endtrivlist\unskip}
+
+\makeatother
+
+\begin{document}
+\global\long\def\mtbfA{\mathbf{A}}
+ \global\long\def\mtbfa{\mathbf{a}}
+ \global\long\def\mebfA{\bar{\mtbfA}}
+ \global\long\def\mebfa{\bar{\mtbfa}}
+
+
+\global\long\def\mhbfA{\widehat{\mathbf{A}}}
+ \global\long\def\mhbfa{\widehat{\mathbf{a}}}
+ \global\long\def\mtcalA{\mathcal{A}}
+ \global\long\def\mtbbA{\mathbb{A}}
+ 
+
+\global\long\def\mtbfB{\mathbf{B}}
+ \global\long\def\mtbfb{\mathbf{b}}
+ \global\long\def\mebfB{\bar{\mtbfB}}
+ \global\long\def\mebfb{\bar{\mtbfb}}
+ 
+
+\global\long\def\mhbfB{\widehat{\mathbf{B}}}
+ \global\long\def\mhbfb{\widehat{\mathbf{b}}}
+ \global\long\def\mtcalB{\mathcal{B}}
+ \global\long\def\mtbbB{\mathbb{B}}
+ 
+
+\global\long\def\mtbfC{\mathbf{C}}
+ \global\long\def\mtbfc{\mathbf{c}}
+ \global\long\def\mebfC{\bar{\mtbfC}}
+ \global\long\def\mebfc{\bar{\mtbfc}}
+
+
+\global\long\def\mhbfC{\widehat{\mathbf{C}}}
+ \global\long\def\mhbfc{\widehat{\mathbf{c}}}
+ \global\long\def\mtcalC{\mathcal{C}}
+ \global\long\def\mtbbC{\mathbb{C}}
+ 
+
+\global\long\def\mtbfD{\mathbf{D}}
+ \global\long\def\mtbfd{\mathbf{d}}
+ \global\long\def\mebfD{\bar{\mtbfD}}
+ \global\long\def\mebfd{\bar{\mtbfd}}
+ 
+
+\global\long\def\mhbfD{\widehat{\mathbf{D}}}
+ \global\long\def\mhbfd{\widehat{\mathbf{d}}}
+ \global\long\def\mtcalD{\mathcal{D}}
+ \global\long\def\mtbbD{\mathbb{D}}
+ 
+
+\global\long\def\mtbfE{\mathbf{E}}
+ \global\long\def\mtbfe{\mathbf{e}}
+ \global\long\def\mebfE{\bar{\mtbfE}}
+ \global\long\def\mebfe{\bar{\mtbfe}}
+
+
+\global\long\def\mhbfE{\widehat{\mathbf{E}}}
+ \global\long\def\mhbfe{\widehat{\mathbf{e}}}
+ \global\long\def\mtcalE{\mathcal{E}}
+ \global\long\def\mtbbE{\mathbb{E}}
+ 
+
+\global\long\def\mtbfF{\mathbf{F}}
+ \global\long\def\mtbff{\mathbf{f}}
+ \global\long\def\mebfF{\bar{\mathbf{F}}}
+ \global\long\def\mebff{\bar{\mathbf{f}}}
+ 
+
+\global\long\def\mhbfF{\widehat{\mathbf{F}}}
+ \global\long\def\mhbff{\widehat{\mathbf{f}}}
+ \global\long\def\mtcalF{\mathcal{F}}
+ \global\long\def\mtbbF{\mathbb{F}}
+ 
+
+\global\long\def\mtbfG{\mathbf{G}}
+ \global\long\def\mtbfg{\mathbf{g}}
+ \global\long\def\mebfG{\bar{\mathbf{G}}}
+ \global\long\def\mebfg{\bar{\mathbf{g}}}
+
+
+\global\long\def\mhbfG{\widehat{\mathbf{G}}}
+ \global\long\def\mhbfg{\widehat{\mathbf{g}}}
+ \global\long\def\mtcalG{\mathcal{G}}
+ \global\long\def\mtbbG{\mathbb{G}}
+ 
+
+\global\long\def\mtbfH{\mathbf{H}}
+ \global\long\def\mtbfh{\mathbf{h}}
+ \global\long\def\mebfH{\bar{\mathbf{H}}}
+ \global\long\def\mebfh{\bar{\mathbf{h}}}
+
+
+\global\long\def\mhbfH{\widehat{\mathbf{H}}}
+ \global\long\def\mhbfh{\widehat{\mathbf{h}}}
+ \global\long\def\mtcalH{\mathcal{H}}
+ \global\long\def\mtbbH{\mathbb{H}}
+ 
+
+\global\long\def\mtbfI{\mathbf{I}}
+ \global\long\def\mtbfi{\mathbf{i}}
+ \global\long\def\mebfI{\bar{\mathbf{I}}}
+ \global\long\def\mebfi{\bar{\mathbf{i}}}
+
+
+\global\long\def\mhbfI{\widehat{\mathbf{I}}}
+ \global\long\def\mhbfi{\widehat{\mathbf{i}}}
+ \global\long\def\mtcalI{\mathcal{I}}
+ \global\long\def\mtbbI{\mathbb{I}}
+ 
+
+\global\long\def\mtbfJ{\mathbf{J}}
+ \global\long\def\mtbfj{\mathbf{j}}
+ \global\long\def\mebfJ{\bar{\mathbf{J}}}
+ \global\long\def\mebfj{\bar{\mathbf{j}}}
+
+
+\global\long\def\mhbfJ{\widehat{\mathbf{J}}}
+ \global\long\def\mhbfj{\widehat{\mathbf{j}}}
+ \global\long\def\mtcalJ{\mathcal{J}}
+ \global\long\def\mtbbJ{\mathbb{J}}
+ 
+
+\global\long\def\mtbfK{\mathbf{K}}
+ \global\long\def\mtbfk{\mathbf{k}}
+ \global\long\def\mebfK{\bar{\mathbf{K}}}
+ \global\long\def\mebfk{\bar{\mathbf{k}}}
+
+
+\global\long\def\mhbfK{\widehat{\mathbf{K}}}
+ \global\long\def\mhbfk{\widehat{\mathbf{k}}}
+ \global\long\def\mtcalK{\mathcal{K}}
+ \global\long\def\mtbbK{\mathbb{K}}
+ 
+
+\global\long\def\mtbfL{\mathbf{L}}
+ \global\long\def\mtbfl{\mathbf{l}}
+ \global\long\def\mebfL{\bar{\mathbf{L}}}
+ \global\long\def\mebfl{\bar{\mathbf{l}}}
+ 
+
+\global\long\def\mhbfL{\widehat{\mathbf{K}}}
+ \global\long\def\mhbfl{\widehat{\mathbf{k}}}
+ \global\long\def\mtcalL{\mathcal{L}}
+ \global\long\def\mtbbL{\mathbb{L}}
+ 
+
+\global\long\def\mtbfM{\mathbf{M}}
+ \global\long\def\mtbfm{\mathbf{m}}
+ \global\long\def\mebfM{\bar{\mathbf{M}}}
+ \global\long\def\mebfm{\bar{\mathbf{m}}}
+
+
+\global\long\def\mhbfM{\widehat{\mathbf{M}}}
+ \global\long\def\mhbfm{\widehat{\mathbf{m}}}
+ \global\long\def\mtcalM{\mathcal{M}}
+ \global\long\def\mtbbM{\mathbb{M}}
+ 
+
+\global\long\def\mtbfN{\mathbf{N}}
+ \global\long\def\mtbfn{\mathbf{n}}
+ \global\long\def\mebfN{\bar{\mathbf{N}}}
+ \global\long\def\mebfn{\bar{\mathbf{n}}}
+ 
+
+\global\long\def\mhbfN{\widehat{\mathbf{N}}}
+ \global\long\def\mhbfn{\widehat{\mathbf{n}}}
+ \global\long\def\mtcalN{\mathcal{N}}
+ \global\long\def\mtbbN{\mathbb{N}}
+ 
+
+\global\long\def\mtbfO{\mathbf{O}}
+ \global\long\def\mtbfo{\mathbf{o}}
+ \global\long\def\mebfO{\bar{\mathbf{O}}}
+ \global\long\def\mebfo{\bar{\mathbf{o}}}
+
+
+\global\long\def\mhbfO{\widehat{\mathbf{O}}}
+ \global\long\def\mhbfo{\widehat{\mathbf{o}}}
+ \global\long\def\mtcalO{\mathcal{O}}
+ \global\long\def\mtbbO{\mathbb{O}}
+ 
+
+\global\long\def\mtbfP{\mathbf{P}}
+ \global\long\def\mtbfp{\mathbf{p}}
+ \global\long\def\mebfP{\bar{\mathbf{P}}}
+ \global\long\def\mebfp{\bar{\mathbf{p}}}
+
+
+\global\long\def\mhbfP{\widehat{\mathbf{P}}}
+ \global\long\def\mhbfp{\widehat{\mathbf{p}}}
+ \global\long\def\mtcalP{\mathcal{P}}
+ \global\long\def\mtbbP{\mathbb{P}}
+ 
+
+\global\long\def\mtbfQ{\mathbf{Q}}
+ \global\long\def\mtbfq{\mathbf{q}}
+ \global\long\def\mebfQ{\bar{\mathbf{Q}}}
+ \global\long\def\mebfq{\bar{\mathbf{q}}}
+
+
+\global\long\def\mhbfQ{\widehat{\mathbf{Q}}}
+ \global\long\def\mhbfq{\widehat{\mathbf{q}}}
+\global\long\def\mtcalQ{\mathcal{Q}}
+ \global\long\def\mtbbQ{\mathbb{Q}}
+ 
+
+\global\long\def\mtbfR{\mathbf{R}}
+ \global\long\def\mtbfr{\mathbf{r}}
+ \global\long\def\mebfR{\bar{\mathbf{R}}}
+ \global\long\def\mebfr{\bar{\mathbf{r}}}
+
+
+\global\long\def\mhbfR{\widehat{\mathbf{R}}}
+ \global\long\def\mhbfr{\widehat{\mathbf{r}}}
+\global\long\def\mtcalR{\mathcal{R}}
+ \global\long\def\mtbbR{\mathbb{R}}
+
+
+\global\long\def\mtbfS{\mathbf{S}}
+ \global\long\def\mtbfs{\mathbf{s}}
+ \global\long\def\mebfS{\bar{\mathbf{S}}}
+ \global\long\def\mebfs{\bar{\mathbf{s}}}
+ 
+
+\global\long\def\mhbfS{\widehat{\mathbf{S}}}
+ \global\long\def\mhbfs{\widehat{\mathbf{s}}}
+\global\long\def\mtcalS{\mathcal{S}}
+ \global\long\def\mtbbS{\mathbb{S}}
+ 
+
+\global\long\def\mtbfT{\mathbf{T}}
+ \global\long\def\mtbft{\mathbf{t}}
+ \global\long\def\mebfT{\bar{\mathbf{T}}}
+ \global\long\def\mebft{\bar{\mathbf{t}}}
+
+
+\global\long\def\mhbfT{\widehat{\mathbf{T}}}
+ \global\long\def\mhbft{\widehat{\mathbf{t}}}
+ \global\long\def\mtcalT{\mathcal{T}}
+ \global\long\def\mtbbT{\mathbb{T}}
+ 
+
+\global\long\def\mtbfU{\mathbf{U}}
+ \global\long\def\mtbfu{\mathbf{u}}
+ \global\long\def\mebfU{\bar{\mathbf{U}}}
+ \global\long\def\mebfu{\bar{\mathbf{u}}}
+
+
+\global\long\def\mhbfU{\widehat{\mathbf{U}}}
+ \global\long\def\mhbfu{\widehat{\mathbf{u}}}
+ \global\long\def\mtcalU{\mathcal{U}}
+ \global\long\def\mtbbU{\mathbb{U}}
+ 
+
+\global\long\def\mtbfV{\mathbf{V}}
+ \global\long\def\mtbfv{\mathbf{v}}
+ \global\long\def\mebfV{\bar{\mathbf{V}}}
+ \global\long\def\mebfv{\bar{\mathbf{v}}}
+
+
+\global\long\def\mhbfV{\widehat{\mathbf{V}}}
+ \global\long\def\mhbfv{\widehat{\mathbf{v}}}
+\global\long\def\mtcalV{\mathcal{V}}
+ \global\long\def\mtbbV{\mathbb{V}}
+ 
+
+\global\long\def\mtbfW{\mathbf{W}}
+ \global\long\def\mtbfw{\mathbf{w}}
+ \global\long\def\mebfW{\bar{\mathbf{W}}}
+ \global\long\def\mebfw{\bar{\mathbf{w}}}
+
+
+\global\long\def\mhbfW{\widehat{\mathbf{W}}}
+ \global\long\def\mhbfw{\widehat{\mathbf{w}}}
+ \global\long\def\mtcalW{\mathcal{W}}
+ \global\long\def\mtbbW{\mathbb{W}}
+ 
+
+\global\long\def\mtbfX{\mathbf{X}}
+ \global\long\def\mtbfx{\mathbf{x}}
+ \global\long\def\mebfX{\bar{\mtbfX}}
+ \global\long\def\mebfx{\bar{\mtbfx}}
+
+
+\global\long\def\mhbfX{\widehat{\mathbf{X}}}
+ \global\long\def\mhbfx{\widehat{\mathbf{x}}}
+ \global\long\def\mtcalX{\mathcal{X}}
+ \global\long\def\mtbbX{\mathbb{X}}
+ 
+
+\global\long\def\mtbfY{\mathbf{Y}}
+ \global\long\def\mtbfy{\mathbf{y}}
+\global\long\def\mebfY{\bar{\mathbf{Y}}}
+ \global\long\def\mebfy{\bar{\mathbf{y}}}
+ 
+
+\global\long\def\mhbfY{\widehat{\mathbf{Y}}}
+ \global\long\def\mhbfy{\widehat{\mathbf{y}}}
+ \global\long\def\mtcalY{\mathcal{Y}}
+ \global\long\def\mtbbY{\mathbb{Y}}
+ 
+
+\global\long\def\mtbfZ{\mathbf{Z}}
+ \global\long\def\mtbfz{\mathbf{z}}
+ \global\long\def\mebfZ{\bar{\mathbf{Z}}}
+ \global\long\def\mebfz{\bar{\mathbf{z}}}
+ 
+
+\global\long\def\mhbfZ{\widehat{\mathbf{Z}}}
+ \global\long\def\mhbfz{\widehat{\mathbf{z}}}
+\global\long\def\mtcalZ{\mathcal{Z}}
+ \global\long\def\mtbbZ{\mathbb{Z}}
+ 
+
+\global\long\def\mtth{\text{th}}
+
+
+\global\long\def\mtbfzero{\mathbf{0}}
+ \global\long\def\mtbfone{\mathbf{1}}
+
+
+\global\long\def\mttrace{\text{Tr}}
+
+
+\global\long\def\mttotalVariation{\text{TV}}
+
+
+\global\long\def\mtexpect{\mathbb{E}}
+ 
+
+\global\long\def\mtdet{\text{det}}
+
+
+\global\long\def\mtvec{\mathbf{\text{vec}}}
+ 
+
+\global\long\def\mtvar{\mathbf{\text{var}}}
+ 
+
+\global\long\def\mtcov{\mathbf{\text{cov}}}
+ 
+
+\global\long\def\mtsubTo{\mathbf{\text{s.t.}}}
+ 
+
+\global\long\def\mtfor{\text{for}}
+
+
+\global\long\def\mtrank{\text{rank}}
+ 
+
+\global\long\def\mtrankn{\text{rankn}}
+ 
+
+\global\long\def\mtdiag{\mathbf{\text{diag}}}
+ 
+
+\global\long\def\mtsign{\mathbf{\text{sign}}}
+ 
+
+\global\long\def\mtloss{\mathbf{\text{loss}}}
+ 
+
+\global\long\def\mtwhen{\text{when}}
+ 
+
+\global\long\def\mtwhere{\text{where}}
+ 
+
+\global\long\def\mtif{\text{if}}
+ 
+
+
+\title{The influence of warm start on the online personalized RL method
+for the mobile health intervention}
+
+
+\author{Feiyun ZHU}
+
+\maketitle
+{\small{}\tableofcontents{}}{\small \par}
+
+
+\paragraph{Abstract}
+
+Online personalized reinforcement learning (RL) is more and more popular
+for the mobile health intervention. It can personalize the type, mode
+and dose of intervention according to user's ongoing status and needs.
+However from the perspective of the methodology, the online RL has
+two drawbacks: 1) it does not have a good initialization of model
+parameters; 2) at the beginning of the online learning, the RL methods
+have too few samples to support the actor-critic RL updates, which
+easily leads to some sub-optimal local minimal that does not perform
+well. Those two drawbacks both delay the online learning process before
+achieving good results, which is highly expensive in time costs and
+risky for the peoples involved to abandon the mobile health intervention. 
+
+To address the above two problems, we propose a new online RL methodology
+that make full use of the data accumulated in the former study as
+well as the knowledge obtained previously. We hope to highly accelerate
+the online learning process. Besides, we design an experiment to verify
+which of the two improvement really makes a difference. Experiment
+results show dramatically improvement has been obtained, especially
+at the beginning of the online RL. 
+
+\begin{flushleft}
+Specifically in this draft, we have three mobile health learning schemes: 
+\par\end{flushleft}
+\begin{enumerate}
+\item The batch RL. For this learning scheme, we generate the (state, action
+and immediate reward) trajectory via the micro random trials, where
+the intervention is given in the probability of 50\%. Given all these
+data, we use the batch actor-cirtc reinforcement learning algorithm
+to learn the policy. Specifically, the critic update is via the LSTDQ;
+the actor update is via the fmincon. 
+\item The 2nd scheme is the personalized online learning, where the RL algorithm
+interacts with the environment and improves in the process. This method
+usually needs a warm start. One straight way is to collect a small
+trajectory of data via micro random trial; and then starts the online
+learning. However, this method greatly delay the learning process,
+which is very costly in the sense of time involved in the study. That
+is, it needs to randomly run the study, to collect a set of data and
+then to start the learning. 
+\item The 3rd schemes deal with the problem of the 2nd method. It makes
+use of the data from the 1st study and treat the learnt parameter
+from the 1st study as a warm study for the online RL of the new users.
+This scheme is supposed to learn much faster than the 2nd methods 
+\end{enumerate}
+
+\paragraph{Notations}
+\begin{enumerate}
+\item We use the upper case bold Roman letters to denote matrices and lower
+case bold Roman letters to represent vectors. For a matrix $\mathbf{Y}=\left[Y_{ln}\right]\in\mathbb{R}^{L\times N}$,
+we denote its $l^{\text{th}}$ row and $n^{\text{th}}$ column via
+$\mathbf{y}^{l}$ and $\mathbf{y}_{n}$ respectively. We use the uppercase
+letter to denote the random variable and the lower case to represent
+the corresponding realization.
+\item \begin{flushleft}
+$S_{i}\in\mathbb{R}^{Lo}$ is the random state at the $i$-th decision
+point, and $s_{i}$ is the corresponding realization. 
+\par\end{flushleft}
+\item $f\left(S_{i}\right)\in\mathbb{R}^{Lf}$ is the value feature via
+the basic functions. In this draft, we have three choices: 1) the
+state vector itself, 2) the polynomial basic function and 3) the radial
+basis function (RBF).
+\item $\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)\in\mathbb{R}^{Lh}$
+is a vector function to achieve the feature for the linear value approximate.
+The definition is as follows 
+\[
+\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)=\left[1,f\left(S_{i}\right)^{T},A_{i},A_{i}f\left(S_{i}\right)^{T}\right]^{T}\in\mathbb{R}^{Lh=2\times Lf+2}.
+\]
+ In the following, we use $\mathbf{x}\left(S_{i},A_{i}\right)$ or
+$\mathbf{x}_{i}$ to denote $\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+for simple. 
+\item $\mathbf{z}\left(S_{i}\right)\in\mathbb{R}^{Lg}$ is a vector function
+to construct the policy feature. Specifically, we use the state variables
+directly along with a constant 1, i.e. $\mathbf{z}\left(S_{i}\right)=\left[S_{i}^{T},1\right]^{T}\in\mathbb{R}^{Lo+1}$.
+For the sake of convenience, we usually use $\mathbf{z}_{i}\in\mathbb{R}^{Lg}$
+to represent $\mathbf{z}\left(S_{i}\right)\in\mathbb{R}^{Lg}$.
+\item ${\displaystyle \pi_{\theta}\left(a\mid s\right)=\frac{\exp\left(a\mathbf{z}\left(s\right)^{T}\theta\right)}{1+\exp\left(\mathbf{z}\left(s\right)^{T}\theta\right)}}$
+is the policy model, where $\theta$ is the model parameter and $a\in\left\{ 0,1\right\} $
+is the binary action.
+\item $N$ denotes the number of people involved in the study; $Ls$ is
+the number of entries in the state vector $S_{i}$; $Lf$ is the feature
+length of $f\left(S_{i}\right)$ after basic function; $Lh$ is the
+feature length of $\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right),$
+which is the feature for the linear value approximate; $Lg$ denotes
+the length of policy feature. 
+\end{enumerate}
+
+\paragraph{Organization of the rest of the paper}
+
+The rest of this paper is organized as follows: in Section\ \ref{sec:Batch_RLs},
+the batch reinforcement learning methods are introduced. Those method
+make use of the data generated via the micro-randomed trials. That
+is, they use the data ready there; they do not need to generate the
+trajectory in the online learning process. In Section\ \ref{sec:online_RLs_noWS},
+the algorithms for the regular online RL methods, without warm starts,
+are provided. The algorithms for the online RL methods with warm start
+are given in Section\ \ref{sec:online_RLs_WS}. The details on the
+simulation data, the performance metric as well as the value features
+are given in the Section\ \ref{sec:experiments_Data_evaluateMetric_feature}.
+
+
+\section{Algorithm for the \textcolor{blue}{batch} actor-critic RL \label{sec:Batch_RLs}}
+
+
+\subsection{Data Collection via the Micro-Randomized Trials \label{sec:DataCollectionViaMicro-randomedTrials}}
+\begin{enumerate}
+\item Section\ \ref{sub:Datasets} introduces the details on the data generation
+(simulation) model (i.e. the MDP model), which is used to generate
+the MDP trajectories. Specifically, we need to set the following parameters 
+
+\begin{enumerate}
+\item $N$ the number of people involved in the data set. 
+\item $T$ the trajectory length; 
+\item $\sigma_{r}$ and $\sigma_{s}$ are the noise strength when simulating
+the reward and the state respectively.
+\item $\sigma_{b}$ is the variance ofthe Gaussian noise put in the basic
+$\bm{\beta}$ to make each individual's MDP different from each other.
+The value of $\sigma_{b}$ indicates how different the people are.
+\end{enumerate}
+\item Draw the trajectories for all the $N$ people; each trajectory includes
+$T$ time points. Specifically at each time point and for each individual
+in the trajectory, we have a sample tuple, including four elements:
+the current state, action, reward and next-state as follows
+\begin{equation}
+\mathcal{D}=\left\{ \mathcal{D}_{n}\right\} _{n=1}^{N},\qquad\text{where}\ \mathcal{D}_{n}=\left\{ \left(s_{i},a_{i},r_{i},s_{i}^{'}\right)\mid i=1,2,\cdots,T\right\} .\label{eq:trajectory4allPeople_set-1}
+\end{equation}
+where the action is randomly chosen with probability of 50\% to give
+the intervention. So we totally have $NT=N\times T$ time points drawn
+from all the $N$ individuals. Collecting all the data, we have the
+following sample matrices 
+\begin{align}
+\mtbfX & =\left[\mtbfX_{1},\mtbfX_{2},\cdots,\mtbfX_{N}\right]\in\mathcal{\mathbb{R}}^{L\times NT}\nonumber \\
+\mathbf{\mtbfY} & =\left[\mtbfY_{1},\mtbfY_{2},\cdots,\mtbfY_{N}\right]\in\mathcal{\mathbb{R}}^{L\times NT}\label{eq:trajectory4allPeople_matrix-1}\\
+\mtbfr & =\left[\mtbfr_{1}^{T},\mtbfr_{2}^{T},\cdots,\mtbfr_{N}^{T}\right]^{T}\in\mathcal{\mathbb{R}}^{NT},\nonumber 
+\end{align}
+where the $n$-th individual's data is collected in $\left\{ \mtbfX_{n},\mtbfY_{n},\mtbfr_{n}\right\} $
+as follows\textbf{\emph{ }}
+\begin{align*}
+\mtbfX_{n} & =\left[\mathbf{x}\left(s_{1},a_{1}\right),\mathbf{x}\left(s_{2},a_{2}\right)\cdots,\mathbf{x}\left(s_{T},a_{T}\right)\right]\in\mathbb{R}^{L\times T}\\
+\mtbfY_{n} & =\left[\sum_{a}\mathbf{x}\left(s_{1}^{'},a\right)\pi_{\theta}\left(a\mid s_{1}^{'}\right),\cdots,\sum_{a}\mathbf{x}\left(s_{T}^{'},a\right)\pi_{\theta}\left(a\mid s_{T}^{'}\right)\right]\in\mathbb{R}^{L\times T}\\
+\mtbfr_{n} & =\left[r_{1},r_{2},\cdots,r_{T}\right]^{T}\in\mathbb{R}^{T},
+\end{align*}
+where $\mtbfX_{n}$ collects the value feature for all the current
+point, $\mtbfY_{n}$ has all value feature for the next point, and
+$\mtbfr_{n}$ contains all the immediate reward. For simplicity, we
+use $\mathbf{x}_{n}=\mathbf{x}\left(s_{n},a_{n}\right)$ to denote
+the feature vector at the $n^{\text{th}}$ time point for the value
+approximate model here and in the rest of this draft. 
+\end{enumerate}
+
+\subsection{Algorithm for the batch discount reward \& contextual bandit via
+the LSTDQ \& Fmincon}
+
+
+\subsubsection{Algorithm}
+\begin{enumerate}
+\item Generate the trajectories for $N$ people, each with the length of
+$T$, and organize them based Section\ \ref{sec:DataCollectionViaMicro-randomedTrials}.
+\item \textbf{Input} \textbf{parameters} for the discount reward method
+and the contextual bandit method.
+
+\begin{enumerate}
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $\mathbf{w}$,
+which is the parameter for the value function.
+\item $\zeta_{a}$ is the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item $\gamma\in\left[0,1\right]$ is a known \textbf{\emph{discount factor}}
+(under assumptions does not depend on $t$). To get the contextual
+bandit method, we simply set $\gamma=0.$
+\end{enumerate}
+\item \textbf{Repeat}
+
+\begin{enumerate}
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{0}$
+as follows }
+\[
+\widehat{\mathbf{w}}_{0}=\left(\zeta_{c}\mathbf{I}+\frac{1}{NT}\sum_{i=1}^{NT}\mathbf{x}_{i}\left(\mathbf{x}_{i}-\gamma\mathbf{y}_{i+1}\right)^{T}\right)^{-1}\left(\frac{1}{NT}\sum_{i=1}^{NT}\mathbf{x}_{i}r_{i}\right),
+\]
+where $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver. Using the notations
+in Eq.\ (\ref{eq:trajectory4allPeople_matrix-1}), we have a compact
+critic update solution 
+\[
+\widehat{\mathbf{w}}_{0}=\left[\zeta_{c}\mathbf{I}+\frac{1}{NT}\mtbfX\left(\mtbfX-\gamma\mtbfY\right)^{T}\right]^{-1}\left(\frac{1}{NT}\mtbfX\mathbf{r}\right).
+\]
+
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{0}=\arg\max_{\theta}}\ \hat{J}(\theta,\widehat{\mathbf{w}}_{0})$},
+which is equivalent to
+\begin{equation}
+\min_{\theta}\mathcal{J}\left(\theta\right)=-\frac{1}{NT}\sum_{i=1}^{NT}\sum_{a\in\left\{ 0,1\right\} }Q\left(S_{i},a;\widehat{\mathbf{w}}_{0}\right)\cdot\pi_{\theta}\left(a|S_{i}\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},\label{eq:actorObj_discountRwd-1}
+\end{equation}
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{0}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{0}$
+is the current estimated value. 
+\end{enumerate}
+
+\textbf{Until }convergence
+
+
+\textbf{Output:} the final parameter $\hat{\theta}_{0}$ in the policy
+function and $\widehat{\mathbf{w}}_{0}$ in the value approximate. 
+
+\end{enumerate}
+
+\subsubsection{Appendix: the gradient for\ (\ref{eq:actorObj_discountRwd-1}) \label{sub:AppendixGradientOfDiscountActorUpdate}}
+
+The gradient for\ (\ref{eq:actorObj_discountRwd-1}) is as follows
+\[
+\nabla_{\theta}\mathcal{J}\left(\theta\right)=\frac{1}{NT}\sum_{i=1}^{NT}\sum_{a\in\left\{ 0,1\right\} }Q\left(S_{i},a;\widehat{\mathbf{w}}_{0}\right)\cdot\nabla_{\theta}\pi_{\theta}\left(a|S_{i}\right)+\zeta_{a}\theta
+\]
+where $\pi_{\theta}\left(a|S_{i}\right)=\frac{\exp\left(a\theta^{T}\mathbf{z}_{i}\right)}{1+\exp\left(\theta^{T}\mathbf{z}_{i}\right)}$,
+$\mathbf{z}_{i}=\mathbf{z}\left(S_{i}\right)$ is the feature for
+policy, and 
+\begin{align*}
+\nabla_{\theta}\pi_{\theta}\left(a|S_{i}\right) & =\frac{\left(\nabla_{\theta}\exp\left(a\theta^{T}\mathbf{z}\right)\right)\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)-\left(\nabla_{\theta}\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)\right)\exp\left(a\theta^{T}\mathbf{z}\right)}{\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)^{2}}.\\
+{\color{red}} & =\frac{\exp\left(a\theta^{T}\mathbf{z}\right)\left(a\mathbf{z}\right)\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)-\exp\left(\theta^{T}\mathbf{z}\right)\mathbf{z}\exp\left(a\theta^{T}\mathbf{z}\right)}{\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)^{2}}\\
+{\color{red}} & =\frac{\exp\left(a\theta^{T}\mathbf{z}\right)}{1+\exp\left(\theta^{T}\mathbf{z}\right)}\cdot\mathbf{z}\frac{a\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)-\exp\left(\theta^{T}\mathbf{z}\right)}{1+\exp\left(\theta^{T}\mathbf{z}\right)}\\
+{\color{red}} & =\pi_{\theta}\left(a\mid S_{i}\right)\mathbf{z}\left(a-\pi_{\theta}\left(1\mid S_{i}\right)\right).
+\end{align*}
+For $a\in\left\{ 0,1\right\} $, we have 
+\begin{align*}
+\nabla_{\theta}\pi_{\theta}\left(0|\mathbf{z}\right) & =\frac{-\exp\left(\theta^{T}\mathbf{z}\right)\mathbf{z}}{\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)^{2}}\\
+\nabla_{\theta}\pi_{\theta}\left(1|\mathbf{z}\right) & =\frac{\exp\left(\theta^{T}\mathbf{z}\right)\mathbf{z}}{\left(1+\exp\left(\theta^{T}\mathbf{z}\right)\right)^{2}}=-\nabla_{\theta}\pi_{\theta}\left(0|\mathbf{z}\right).
+\end{align*}
+
+
+
+\subsection{Algorithm for the batch average reward via the LSTDQ \& Fmincon}
+
+
+\subsubsection{Algorithm}
+\begin{enumerate}
+\item Generate the trajectories for $N$ people, each with the trajectory
+length as $T$, and organize them based on Section\ \ref{sec:DataCollectionViaMicro-randomedTrials}.
+\item \textbf{Input} \textbf{parameters} for the discount and contextual
+bandit algorithm
+
+\begin{enumerate}
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $\mathbf{w}$,
+which is the parameter for the value function.
+\item $\zeta_{a}$ is the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\end{enumerate}
+\item \textbf{Repeat}
+
+\begin{enumerate}
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{0}$
+as follows}
+\begin{equation}
+\mhbfw_{0}=\left(\zeta_{c}\mtbfI+\frac{1}{NT}\sum_{i=1}^{NT}\left(\mtbfx_{i}-\mebfx_{0}\right)\left(\mtbfx_{i}-\gamma\mtbfy_{i+1}\right)^{T}\right)^{-1}\left(\frac{1}{NT}\sum_{i=1}^{NT}\left(\mtbfx_{i}-\mebfx_{0}\right)r_{i}\right),\label{eq:AvgRwd_criticUpdate}
+\end{equation}
+where $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver; $\mebfx_{0}=\frac{1}{NT}\sum_{i=1}^{NT}\mtbfx_{i}$
+is the mean of all the current value features. 
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{0}=\arg\max_{\theta}}\ \hat{J}(\theta,\widehat{\mathbf{w}}_{0})$},
+which is equivalent to\textbf{
+\begin{alignat}{1}
+\min_{\theta}\mtcalJ_{t}\left(\theta\right) & =-\frac{1}{NT}\sum_{i=1}^{NT}\left(r_{i}+V\left(S_{i+1};\mhbfw_{0}\right)-Q\left(S_{i},A_{i};\mhbfw_{0}\right)\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},\label{eq:obj_AvgRwd_actorUpdate}\\
+ & =-\frac{1}{NT}\sum_{i=1}^{NT}\left(r_{i}+\sum_{a\in\mtcalA}Q\left(S_{i+1},a;\mhbfw_{0}\right)\pi_{\theta}\left(a|S_{i+1}\right)-Q\left(S_{i},A_{i};\mhbfw_{0}\right)\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2}.\nonumber 
+\end{alignat}
+}Here the actor update and the critic update are done separately;
+besides, we substitute the value of $\mhbfw_{0}$ instead of the expression
+of $\mhbfw_{0}$ into the actor objective function. $Q\left(S_{i},A_{i};\mhbfw_{0}\right)$
+is not related to the parameter $\theta.$ Removing the irrelevant
+terms with $\theta$ in\ (\ref{eq:obj_AvgRwd_actorUpdate}), we have
+the new objective function
+\begin{equation}
+\min_{\theta}\mathcal{J}\left(\theta\right)=-\frac{1}{NT}\sum_{i=1}^{NT}\sum_{a\in\mtcalA}Q\left(S_{i+1},a;\widehat{\mathbf{w}}_{0}\right)\cdot\pi_{\theta}\left(a|S_{i+1}\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},\label{eq:actorObj_discountRwd_2}
+\end{equation}
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i+1},a;\widehat{\mathbf{w}}_{0}\right)=\mathbf{x}\left(S_{i+1},a\right)^{T}\widehat{\mathbf{w}}_{0}$
+is the current estimated value. 
+\end{enumerate}
+
+\textbf{Until }convergence
+
+
+\textbf{Output:} the final parameter $\hat{\theta}_{0}$ in the policy
+function and $\widehat{\mathbf{w}}_{0}$ in the value approximate. 
+
+\end{enumerate}
+
+\subsubsection{Appendixe\#1: prove of the critic update\ (\ref{eq:AvgRwd_criticUpdate})}
+\begin{proof}
+According to Susan's draft, the basic equation for the actor critic
+average reward is
+\begin{equation}
+0=\sum_{i=1}^{t}\left(r_{i}-\eta+V\left(S_{i+1};\mtbfw\right)-Q\left(S_{i},A_{i};\mtbfw\right)\right)\left(\begin{array}{c}
+1\\
+f\left(S_{i}\right)\left(1-A_{i}\right)\\
+f\left(S_{i}\right)A_{i}
+\end{array}\right)-\zeta_{a}\mtbfI\left(\begin{array}{c}
+0\\
+\mtbfw_{0}\\
+\mtbfw_{1}
+\end{array}\right)\label{eq:AvgRwdBasicFunction-1}
+\end{equation}
+where $v=\left(v_{0}^{T},v_{1}^{T}\right)^{T}$ and $\eta\in\mtbbR$
+are unknown variables; $Q\left(S_{i},A_{i};\mtbfw\right)=\mtbfw^{T}\mtbfx_{i}$
+and $V\left(S_{i+1};\mtbfw\right)=\mtbfw^{T}\mtbfy_{i+1}$. If we
+using a more general feature, like $\mtbfx_{i}=\mtbfx\left(f\left(S_{i}\right),A_{i}\right)$
+and $\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta}\left(a\mid S_{i+1}\right)$,
+(\ref{eq:AvgRwdBasicFunction-1}) is turned into 
+\begin{equation}
+0=\sum_{i=1}^{t}\left(r_{i}-\eta+\mtbfy_{i+1}^{T}\mtbfw-\mtbfx_{i}^{T}\mtbfw\right)\left(\begin{array}{c}
+1\\
+\mtbfx_{i}
+\end{array}\right)-\zeta_{a}\mtbfI\left(\begin{array}{c}
+0\\
+\mtbfw
+\end{array}\right)\label{eq:AvgRwdBasicFunction_new-1}
+\end{equation}
+There are two rows in\ (\ref{eq:AvgRwdBasicFunction_new-1}). Considering
+the first row, we have 
+\[
+0=\sum_{i=1}^{t}\left(r_{i}-\eta+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)
+\]
+ and \textcolor{blue}{
+\begin{equation}
+\eta=\frac{1}{t}\sum_{i=1}^{t}\left(r_{i}+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right).\label{eq:AvgRwd_update_eta-1}
+\end{equation}
+}Considering the last row in\ (\ref{eq:AvgRwdBasicFunction_new-1}),
+we have 
+\[
+\sum_{i=1}^{t}\mtbfx_{i}\left(r_{i}-\eta+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)-\zeta_{a}\mtbfw=0
+\]
+ and \textcolor{blue}{
+\begin{equation}
+\left(\zeta_{a}\mtbfI+\sum_{i=1}^{t}\mtbfx_{i}\left(\mtbfx_{i}-\mtbfy_{i+1}\right)^{T}\right)\mtbfw=\sum_{i=1}^{t}\mtbfx_{i}\left(r_{i}-\eta\right).\label{eq:AvgRwd_update_v-1}
+\end{equation}
+}Substituting the estimator of $\eta$ in\ (\ref{eq:AvgRwd_update_eta-1})
+into\ (\ref{eq:AvgRwd_update_v-1}), we have
+\begin{align*}
+ & \left(\zeta_{a}\mtbfI+\sum_{i=1}^{t}\mtbfx_{i}\left(\mtbfx_{i}-\mtbfy_{i+1}\right)^{T}\right)\mtbfw=\sum_{i=1}^{t}\mtbfx_{i}\left(r_{i}-\eta\right)\\
+= & \sum_{i=1}^{t}\mtbfx_{i}\left(r_{i}-\frac{1}{t}\sum_{i=1}^{t}\left(r_{i}+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)\right)\\
+= & \sum_{i=1}^{t}\mtbfx_{i}r_{i}-\left[\sum_{i=1}^{t}\mtbfx_{i}\cdot\frac{1}{t}\sum_{i=1}^{t}\left(r_{i}+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)\right]\\
+= & \sum_{i=1}^{t}\mtbfx_{i}r_{i}-\left(\frac{1}{t}\sum_{i=1}^{t}\mtbfx_{i}\right)\left(\sum_{i=1}^{t}\left(r_{i}+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)\right).
+\end{align*}
+Let $\mebfx_{t}=\left(\frac{1}{t}\sum_{i=1}^{t}\mtbfx_{i}\right)$,
+we have the following derivations 
+\begin{align*}
+\left(\zeta_{a}\mtbfI+\sum_{i=1}^{t}\mtbfx_{i}\left(\mtbfx_{i}-\mtbfy_{i+1}\right)^{T}\right)\mtbfw= & \sum_{i=1}^{t}\mtbfx_{i}r_{i}-\mebfx_{t}\left(\sum_{i=1}^{t}\left(r_{i}+\left(\mtbfy_{i+1}-\mtbfx_{i}\right)^{T}\mtbfw\right)\right)\\
+= & \sum_{i=1}^{t}\left(\mtbfx_{i}-\mebfx_{t}\right)r_{i}+\sum_{i=1}^{t}\mebfx_{t}\left(\mtbfx_{i}-\mtbfy_{i+1}\right)^{T}\mtbfw,
+\end{align*}
+and
+\[
+\left(\zeta_{a}\mtbfI+\sum_{i=1}^{t}\left(\mtbfx_{i}-\mebfx_{t}\right)\left(\mtbfx_{i}-\mtbfy_{i+1}\right)^{T}\right)\mtbfw=\sum_{i=1}^{t}\left(\mtbfx_{i}-\mebfx_{t}\right)r_{i}.
+\]
+
+\end{proof}
+
+\subsubsection{Appendix\#2: the gradient for\ (\ref{eq:actorObj_discountRwd-1})}
+
+Please check Section\ \ref{sub:AppendixGradientOfDiscountActorUpdate}
+for detail.
+
+
+\section{Algorithm for the \textcolor{blue}{online} actor-critic RL without
+Warm-Start \label{sec:online_RLs_noWS}}
+
+
+\subsection{Online actor-cirtc Contextual bandit\label{sub:Alg_4_onlineBandit_noWS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item $\mathbf{B}_{0}=\zeta_{c}\mathbf{I}_{Lh\times Lh}\in\mathbb{R}^{Lh\times Lh}$
+and $\mathbf{a}_{0}=\mtbfzero\in\mathbb{R}^{Lh}$.
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a|s_{t}).$
+\item Observe an immediate reward $r_{t}$; 
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via
+\begin{equation}
+\widehat{\mathbf{w}}_{t}=\mathbf{B}_{t}^{-1}\mathbf{a}_{t},\label{eq:emmyOnlineBantidCriticUpdate-1}
+\end{equation}
+}where $\mathbf{B}_{t}=\mathbf{B}_{t-1}+\mathbf{x}\left(s_{t},a_{t}\right)\mathbf{x}\left(s_{t},a_{t}\right)^{T}$
+and $\mathbf{a}_{t}=\mathbf{a}_{t-1}+\mathbf{x}\left(s_{t},a_{t}\right)r_{t}$.
+Since $\left\{ \mathbf{B}_{t}\right\} _{t=1}^{T}$ is generally invertible,
+we may use the \href{https://en.wikipedia.org/wiki/Sherman\%E2\%80\%93Morrison_formula}{Sherman–Morrison formula}
+to highly reduce the computational cost of\ (\ref{eq:emmyOnlineBantidCriticUpdate-1}),
+resulting in the following updates 
+\[
+\widehat{\mathbf{w}}_{t}=\widehat{\mathbf{w}}_{t-1}+\mathbf{B}_{t-1}^{-1}\mathbf{x}\left(s_{t},a_{t}\right)\left\{ \frac{\mathbf{x}\left(s_{t},a_{t}\right)^{T}\mathbf{B}_{t-1}^{-1}-r_{t}}{1+\mathbf{x}\left(s_{t},a_{t}\right)^{T}\mathbf{B}_{t-1}^{-1}\mathbf{x}\left(s_{t},a_{t}\right)}\right\} 
+\]
+
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to 
+\[
+\min_{\theta}\mathcal{J}_{t}\left(\theta\right)=-\frac{1}{t}\sum_{i=1}^{t}\sum_{a}Q\left(S_{i},a;\mathbf{w}_{t}\right)\pi_{\theta}\left(a|S_{i}\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{t}$ in the policy
+function\textbf{ }and $\mhbfw_{t}$ in the value approximate. 
+\end{enumerate}
+
+\subsection{Online actor-cirtc discount reward\label{sub:Alg_4_onlineDiscount_noWS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item $\gamma\in\left[0,1\right]$ is a known \textbf{\emph{discount factor}}
+(under assumptions does not depend on $t$). To get the contextual
+bandit method, we simply set $\gamma=0.$
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a|s_{t}).$
+\item Observe an immediate reward $r_{t}$; 
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via}
+\[
+\widehat{\mathbf{w}}_{t}=\left(\zeta_{c}\mathbf{I}+\frac{1}{t}\sum_{i=1}^{t}\mathbf{x}_{i}\left(\mathbf{x}_{i}-\gamma\mathbf{y}_{i+1}\right)^{T}\right)^{-1}\left(\frac{1}{t}\sum_{i=1}^{t}\mathbf{x}_{i}r_{i}\right),
+\]
+where $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver. Note that after
+each actor update, we need to re-calculate the next value feature
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+based on the new obtained policy parameter $\theta_{t}.$
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to 
+\[
+\min_{\theta}\mathcal{J}_{t}\left(\theta\right)=-\frac{1}{t}\sum_{i=1}^{t}\sum_{a}Q\left(S_{i},a;\mathbf{w}_{t}\right)\pi_{\theta}\left(a|S_{i}\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{T}$ in the policy
+function\textbf{ }and $\mhbfw_{t}$ in the value approximate. 
+\end{enumerate}
+
+\subsection{Online actor-cirtc Average Reward\label{sub:Alg_4_onlineAvgRwd_noWS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ is the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a_{t}|s_{t}).$
+\item Observe an immediate reward $r_{t}$.
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via}
+\[
+\mhbfw_{t}=\left(\zeta_{c}\mtbfI+\frac{1}{t}\sum_{i=1}^{t}\left(\mtbfx_{i}-\mebfx_{0}\right)\left(\mtbfx_{i}-\gamma\mtbfy_{i+1}\right)^{T}\right)^{-1}\left(\sum_{i=1}^{t}\left(\mtbfx_{i}-\mebfx_{0}\right)r_{i}\right),
+\]
+where $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver. $\mebfx_{0}=\frac{1}{NT}\sum_{i=1}^{NT}\mtbfx_{i}$
+is the mean of all the current value features. Note that after each
+actor update, we need to re-calculate the next value feature $\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+based on the new obtained policy parameter $\theta_{t}.$
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to\textbf{
+\begin{alignat*}{1}
+\min_{\theta}\mtcalJ_{t}\left(\theta\right) & =-\frac{1}{t}\sum_{i=1}^{t}\left(r_{i}+\sum_{a\in\mtcalA}Q\left(S_{i+1},a;\mhbfw_{t}\right)\pi_{\theta}\left(a|S_{i+1}\right)-Q\left(S_{i},A_{i};\mhbfw_{t}\right)\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2}.
+\end{alignat*}
+}Here the actor update and the critic update are done separately;
+besides, we substitute the value of $\mhbfw_{t}$ instead of the expression
+of $\mhbfw_{t}$ into the actor objective function. $Q\left(S_{i},A_{i};\mhbfw_{t}\right)$
+is not related to the parameter $\theta.$ Removing the irrelevant
+terms with $\theta$ in\ (\ref{eq:obj_AvgRwd_actorUpdate}), we have
+the new objective function 
+\[
+\min_{\theta}\mathcal{J}_{t}\left(\theta\right)=-\frac{1}{t}\sum_{i=1}^{t}\sum_{a\in\mtcalA}Q\left(S_{i+1},a;\mhbfw_{t}\right)\cdot\pi_{\theta}\left(a|S_{i}\right)+\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2},
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{t}$ in the policy
+function\textbf{ }and $\mathbf{\mhbfw}_{t}$ in the value approximate. 
+\end{enumerate}
+
+\section{Algorithms for the \textcolor{blue}{online} actor-cirtc RL with Warm-Start
+\label{sec:online_RLs_WS}}
+
+There are two kinds of differences between the RL methods with warm
+start and those RL methods without warm-starts:
+\begin{enumerate}
+\item the RL with warm start make use of the data from the 1st set of $\beta$s
+(i.e. individuals or MDPs), while the RL without warm start does not
+make any use of the data from 1st set of $\beta$s. 
+\item the RL with warm start takes the learnt value parameter and policy
+parameter, via the batch RL methods on the 1st set of of data, as
+the initialization of the parameters in the online learning. 
+\end{enumerate}
+In Sections\ \ref{sub:Alg_4_onlineBandit_WS},\ \ref{sub:Alg_4_onlineDiscount_WS}\ and\ \ref{sub:Alg_4_onlineAvgRwd_WS},
+we will give the algorithms for the RL method with warm start. Note
+that the terms in red uses the data generated via the micro-randomed
+trial based on the 1st set of individuals. 
+
+
+\paragraph*{Notations to differentiate the data from 1st set of individual and
+the the data collected in the online process:}
+\begin{itemize}
+\item the varibles with bars are the data from the 1st set of beta, i.e.
+$\left\{ \left(\mebfx_{n},\mebfy_{n},\bar{r}_{n}\right)\right\} _{n=1}^{NT},$
+where $N$ is the number of people involved; $T$ is the trajectory
+length. 
+\item the normal varibles are the data generated in the online learning,
+i.e. $\left\{ \left(\mtbfx_{i},\mtbfy_{i},r_{i}\right)\right\} _{i=1}^{t}$
+, where $t$ is the current trajectory length in the online learning.
+\end{itemize}
+
+\subsection{Online actor-cirtc Contextual bandit with warm start \label{sub:Alg_4_onlineBandit_WS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item the learnt value parameter $\mhbfw_{0}$ and the learnt policy parameter
+$\hat{\theta}_{0}$, via the batch RL methods on the data from the
+1st set of individuals, as an initialization of the corresponding
+parameters on the actor-critic RL methods. 
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a|s_{t}).$
+\item Observe an immediate reward $r_{t}$; 
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via
+\[
+\widehat{\mathbf{w}}_{t}=\left\{ \zeta_{c}\mathbf{I}+\frac{1}{t+1}\left[{\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\mathbf{\mebfx}_{j}\mathbf{\mebfx}_{j}^{T}}+\sum_{i=1}^{t}\mathbf{x}_{i}\mathbf{x}_{i}^{T}\right]\right\} ^{-1}\left[\frac{1}{t+1}\left({\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\mebfx_{j}\bar{r}_{j}}+\sum_{i=1}^{t}\mathbf{x}_{i}r_{i}\right)\right].
+\]
+}where $\left\{ \mebfx_{j}\right\} _{j=1}^{NT}$ is the data from
+the 1st set of individuals (i.e. $N$ individuals, each is with a
+trajectory of $T$ points); $\left(\mtbfx_{i}\right)_{i=1}^{t}$ is
+the data that is collected when the RL method interacts with the MDP
+system; $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver.
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to 
+\[
+\min_{\theta}\mathcal{J}\left(\theta\right)=-\frac{1}{t+1}\left\{ {\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\sum_{a\in\left\{ 0,1\right\} }Q\left(\bar{S}_{j},a;\widehat{\mathbf{w}}_{t}\right)\pi_{\theta}\left(a|\bar{S}_{j}\right)}+\sum_{i=1}^{t}\sum_{a\in\left\{ 0,1\right\} }Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)\cdot\pi\left(a|S_{i}\right)\right\} +\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2}.
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{T}$ in the policy
+function\textbf{ }and $\mathbf{w}_{t}$ in the value approximate. 
+\end{enumerate}
+
+\subsection{Online actor-cirtc discount reward with warm start \label{sub:Alg_4_onlineDiscount_WS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item $\gamma\in\left[0,1\right]$ is a known \textbf{\emph{discount factor}}
+(under assumptions does not depend on $t$). To get the contextual
+bandit method, we simply set $\gamma=0.$
+\item the learnt value parameter $\mhbfw_{0}$ and the learnt policy parameter
+$\hat{\theta}_{0}$, via the batch RL methods on the data from the
+1st set of individuals, as an initialization of the corresponding
+parameters on the actor-critic RL methods.
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a_{t}|s_{t}).$
+\item Observe an immediate reward $r_{t}$.
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via}
+\[
+\widehat{\mathbf{w}}_{t}=\left\{ \zeta_{c}\mathbf{I}+\frac{1}{t+1}\left[{\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\mathbf{\mebfx}_{j}\left(\mathbf{\mebfx}_{j}-\gamma\mathbf{\mebfy}_{i+1}\right)^{T}}+\sum_{i=1}^{t}\mathbf{x}_{i}\left(\mathbf{x}_{i}-\gamma\mathbf{y}_{i+1}\right)^{T}\right]\right\} ^{-1}\left[\frac{1}{t+1}\left({\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\mebfx_{j}\bar{r}_{j}}+\sum_{i=1}^{t}\mathbf{x}_{i}r_{i}\right)\right].
+\]
+where $\left\{ \mebfx_{j}\right\} _{j=1}^{NT}$ is the data from the
+1st set of individuals (i.e. $N$ individuals, each is with a trajectory
+of $T$ points); $\left(\mtbfx_{i}\right)_{i=1}^{t}$ is the data
+that is collected when the RL method interacts with the MDP system;
+$\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver.
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to 
+\[
+\min_{\theta}\mathcal{J}\left(\theta\right)=-\frac{1}{t+1}\left\{ {\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\sum_{a\in\left\{ 0,1\right\} }Q\left(\bar{S}_{j},a;\widehat{\mathbf{w}}_{t}\right)\pi_{\theta}\left(a|\bar{S}_{j}\right)}+\sum_{i=1}^{t}\sum_{a\in\left\{ 0,1\right\} }Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)\cdot\pi\left(a|S_{i}\right)\right\} +\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2}.
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{t}$ in the policy
+function\textbf{ }and $\mathbf{w}_{t}$ in the value approximate. 
+\end{enumerate}
+
+\subsection{Online actor-cirtc Average Reward with Warm Start \label{sub:Alg_4_onlineAvgRwd_WS}}
+\begin{enumerate}
+\item \textbf{Input}:
+
+\begin{enumerate}
+\item $T_{\text{max}}$ the maximum trajectory length in the online learning
+setting. 
+\item $\zeta_{c}$ is the strength of $\ell_{2}$-constraint on $v$, which
+is the parameter for the value function.
+\item $\zeta_{a}$ the strength of $\ell_{2}$-constraint on $\theta$,
+which is the parameter for the policy function. 
+\item the learnt value parameter $\mhbfw_{0}$ and the learnt policy parameter
+$\hat{\theta}_{0}$, via the batch RL methods on the data from the
+1st set of individuals, as an initialization of the corresponding
+parameters on the actor-critic RL methods.
+\end{enumerate}
+\item \textbf{While} ( $t<T_{\text{max}}$ )
+
+\begin{enumerate}
+\item Observe context $s_{t}$. 
+\item Draw an action $a_{t}$ according to the probability distribution
+$\pi_{\theta}(a|s_{t}).$
+\item Observe an immediate reward $r_{t}$; 
+\item \textbf{\emph{Critic update to get}}\emph{ the optimal $\widehat{\mathbf{w}}_{t}$
+at point} $t$ \emph{via}
+\begin{align*}
+\mhbfw_{t}= & \left\{ \zeta_{c}\mtbfI+\frac{1}{t+1}\left[{\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\left(\mathbf{\mebfx}_{j}-\mebfx_{0}\right)\left(\mathbf{\mebfx}_{j}-\gamma\mathbf{\mebfy}_{i+1}\right)^{T}}+\sum_{i=1}^{t}\left(\mtbfx_{i}-\mtbfx_{0}\right)\left(\mtbfx_{i}-\gamma\mtbfy_{i+1}\right)^{T}\right]\right\} ^{-1},\\
+ & \left\{ \frac{1}{t+1}\left[{\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\left(\mathbf{\mebfx}_{j}-\mebfx_{0}\right)r_{i}}+\sum_{i=1}^{t}\left(\mtbfx_{i}-\mtbfx_{0}\right)r_{i}\right]\right\} 
+\end{align*}
+where $\mathbf{x}_{i}=\mathbf{x}\left(f\left(S_{i}\right),A_{i}\right)$
+is the feature vector at decision point $i$ for the value funciton;
+$\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta}\left(a\mid S_{i+1}\right)$
+is the feature at the next time point; $r_{i}$ is the immediate reward
+at the $i$-th point; $\zeta_{c}$ is the balancing parameter for
+the $\ell_{2}$ constraint to avoid singular solver. $\mtbfx_{0}=\frac{1}{t}\sum_{i=1}^{t}\mtbfx_{i}$
+and $\mebfx_{0}=\frac{1}{NT}\sum_{i=1}^{NT}\mebfx_{i}$ are the means
+of all the current value features. Note that after each actor update,
+we need to re-calculate the next value feature $\mathbf{y}_{i+1}=\sum_{a}\mathbf{x}\left(f\left(S_{i+1}\right),a\right)\pi_{\theta_{t}}\left(a\mid S_{i+1}\right)$
+based on the new obtained policy parameter $\theta_{t}.$
+\item \textbf{\emph{Actor update}}\textbf{ }to get\textbf{ ${\displaystyle \hat{\theta}_{t}=\arg\max_{\theta}}\ \hat{J}_{t}(\theta,\widehat{\mathbf{w}}_{t})$},
+which is equivalent to
+\[
+\min_{\theta}\mathcal{J}\left(\theta\right)=-\frac{1}{t+1}\left\{ {\color{red}\frac{1}{NT}\sum_{j=1}^{NT}\sum_{a\in\left\{ 0,1\right\} }Q\left(\bar{S}_{j+1},a;\widehat{\mathbf{w}}_{t}\right)\pi_{\theta}\left(a|\bar{S}_{j+1}\right)}+\sum_{i=1}^{t}\sum_{a\in\left\{ 0,1\right\} }Q\left(S_{i+1},a;\widehat{\mathbf{w}}_{t}\right)\cdot\pi_{\theta}\left(a|S_{i+1}\right)\right\} +\frac{\zeta_{a}}{2}\left\Vert \theta\right\Vert _{2}^{2}.
+\]
+where $\zeta_{a}$ is a balancing parameter for the $\ell_{2}$ constraint
+on $\theta$ to prevent over-fitting; $Q\left(S_{i},a;\widehat{\mathbf{w}}_{t}\right)=\mathbf{x}\left(S_{i},a\right)^{T}\widehat{\mathbf{w}}_{t}$
+is the current estimated value.
+\end{enumerate}
+\item \textbf{End While}
+\item \textbf{Output:} the final parameter $\hat{\theta}_{t}$ in the policy
+function\textbf{ }and $\mathbf{w}_{t}$ in the value approximate. 
+\end{enumerate}
+
+\section{The experiment settings \label{sec:experiments_Data_evaluateMetric_feature}}
+
+
+\subsection{Datasets \label{sub:Datasets}}
+
+In the experiments, a trajectory of $T$ (the trajectory length) tuples
+for each individual is defined as follows 
+\begin{equation}
+\mathcal{D}_{T}=\left\{ \left(O_{0},A_{0},R_{0}\right),\left(O_{1},A_{1},R_{1}\right),\cdots,\left(O_{T},A_{T},R_{T}\right)\right\} ,\label{eq:jdkafdja-1}
+\end{equation}
+where the initial states and action are generated by $O_{0}\sim\mathrm{Normal}_{p_{1}}\left\lbrace 0,\Sigma\right\rbrace $
+and $A_{0}=0$. Here we have $\Sigma=\left[\begin{array}{cc}
+\Sigma_{1} & 0\\
+0 & I_{p-3}
+\end{array}\right]$ and ${\displaystyle \Sigma_{1}=\begin{bmatrix}1 & 0.3 & -0.3\\
+0.3 & 1 & -0.3\\
+-0.3 & -0.3 & 1
+\end{bmatrix}}.$ For $t\geq1$, we have the state generation model as follows
+\begin{align}
+O_{t,1} & =\beta_{1}O_{t-1,1}+\xi_{t,1},\qquad\text{weather-high is good}\nonumber \\
+O_{t,2} & =\beta_{2}O_{t-1,2}+\beta_{3}A_{t-1}+\xi_{t,2},\qquad\text{engagement}\label{eq:Dat=0000231_stateTrans_cmp3}\\
+O_{t,3} & =\beta_{4}O_{t-1,3}+\beta_{5}O_{t-1,3}A_{t-1}+\beta_{6}A_{t-1}+\xi_{t,3},\quad\text{treatment fatigue}\nonumber \\
+O_{t,j} & =\beta_{7}O_{t-1,j}+\xi_{t,j}.\quad j=4,\ldots,p\nonumber 
+\end{align}
+ The corresponding immediate reward model is as follows 
+\begin{equation}
+R_{t+1}=\beta_{14}\times\left[\beta_{8}+A_{t}\times(\beta_{9}+\beta_{10}O_{t,1}+\beta_{11}O_{t,2})+\beta_{12}O_{t,1}{\color{blue}-{\color{blue}\beta_{13}O_{t,3}}}+\varrho_{t,}\right],\label{eq:Dat=0000231_ImmediateRwd_cmp3}
+\end{equation}
+where ${\color{blue}-\beta_{13}O_{t,3}}$ is the treatment fatigue.
+In the above generation model, the $\left\{ \xi_{t,i}\right\} _{i=1}^{p}$
+at the $t$-th time point are the noise in the state transition model\ (\ref{eq:Dat=0000231_stateTrans_cmp3})
+that is drawn from $\left\{ \xi_{t,i}\right\} _{i=1}^{p}\sim\textnormal{Normal}\left(0,\sigma_{s}^{2}\right)$.
+$\varrho_{t}$ is the noise in the reward model\ (\ref{eq:Dat=0000231_ImmediateRwd_cmp3}),
+which is defined as $\varrho_{t}\sim\textnormal{Normal}\left(0,\sigma_{r}^{2}\right)$.
+
+To generate a group of $N$ people that is slightly different from
+each other, we need $N$ slightly different MDPs. Formally, each MDP
+is specified by the value of $\bm{\beta}$, cf. Eqn.\ (\ref{eq:Dat=0000231_stateTrans_cmp3})
+and\ (\ref{eq:Dat=0000231_ImmediateRwd_cmp3}). The $\bm{\beta}s$
+is generated the following two steps:
+\begin{enumerate}
+\item we set an initial (i.e. basic) $\bm{\beta}_{\text{basic}}=\left[0.40,0.25,0.35,0.65,0.10,0.50,0.22,2.00,0.15,0.20,0.32,0.10,0.45,5\right]$.
+\item To make a group of $N$ people that is slight different, we set the
+$\left\{ \bm{\beta}_{i}\right\} _{i=1}^{N}$ as 
+\[
+\bm{\beta}_{i}=\bm{\beta}_{\text{basic}}+\bm{\delta}_{i},\qquad\text{for}\ i\in\left\{ 1,2,\cdots,N\right\} ,
+\]
+where $\bm{\delta}_{i}\sim\text{Normal}\left(0,\sigma_{b}\mathbf{I}_{14}\right)$
+and $\mathbf{I}_{14}\in\mathbb{R}^{14\times14}$ is an identity matrix.
+\end{enumerate}
+To generate the MDP for a future user, we will use this kind of method
+to generate a new $\bm{\beta}.$ In this way, the $\bm{\beta}$ for
+each individual is different from each other; $\sigma_{b}$ controls
+how different the MDPs are, i.e. how different the individuals are.
+
+
+\subsection{Evaluation Metrics for Quantitative Performance}
+
+We want to see if the personalized RL methods could learn faster when
+we initialize online algorithms with $\mathbf{B}_{0}$, $\mathbf{a}_{0}$
+from the 1st data set. We want to compare them with not using $\mathbf{B}_{0}$,
+$\mathbf{a}_{0}$ from the 1st data set, for different $t<T_{\max}$.
+We will do these for a variety of $t$ not just $T_{\max}.$
+
+We use one metric to measure the quality of the learnt policy, i.e.
+the expectation of the long run average reward (i.e. ElrAR) $\mathbb{E}_{\pi}\left[\eta_{\hat{\theta}}\right]$,
+where $\hat{\theta}$ is the learnt policy parameter. Intuitively,
+ElrAR measures how much average reward in the long run we could get
+by using the learnt policy $\hat{\theta}$. A larger ElrAR corresponds
+to a better performance. Formally, there are three steps to get the
+ElrAR:
+\begin{itemize}
+\item For each individual, a very long trajectory of $T=5,000$ is generated
+by the using the policy parameter $\hat{\theta}$; 
+\item By averaging the rewards for the last $4,000$ elements from the trajectory,
+we could get the long run average reward 
+\[
+\eta_{\hat{\theta}}=\frac{1}{T-i}\sum_{j=i}^{T}R_{j+1}\left(S_{j},A_{j}\right)
+\]
+where $i=1000$, $T=5,000$. 
+\item The expectation of the long run average reward is obtained by averaging
+$\eta_{\hat{\theta}}$ among all the $N$ individual results the as
+\[
+\mathbb{E}_{\pi}\left[\eta_{\hat{\theta}}\right]\approx\frac{1}{N}\sum_{n=1}^{N}\eta_{\hat{\theta}}^{\left(n\right)},
+\]
+where $\eta_{\hat{\theta}}^{\left(n\right)}$ is the estimated long
+run average reward for the $n^{\mtth}$ individual (i.e. MDP). 
+\end{itemize}
+
+\subsection{Feature construction \label{sub:FeatureConstruction}}
+
+In this section, we introduce how to construct the features for the
+policy function and the value approximate function respectively. The
+policy feature is easy, which is simply adding one constant into the
+state vector 
+\[
+\mathbf{z}\left(O_{i}\right)=\left[1,O_{t}\right]^{T}\in\mathbb{R}^{Lo+1}.
+\]
+The feature for the value approximation is more complex. It employs
+the basic function 
+\[
+\mathbf{z}\left(O_{i},A_{i}\right)=\left[\left(1-A_{i}\right)f\left(O_{i}\right)^{T},A_{i}f\left(O_{i}\right)^{T}\right]^{T},
+\]
+where $f\left(O_{i}\right)$ is a basic function of state $O_{i}.$
+In the follwoing, we will introduce two popular basic function for
+the reinforcement learning\ \cite{George_2011_AAAI_ValueApproxViaFourier,Sutton_2012_Book_ReinforcementLearning}.
+
+
+\subsubsection{The polynomial basis\ \cite{George_2011_AAAI_ValueApproxViaFourier}}
+\begin{enumerate}
+\item Given $d$ state variables $\mathbf{x}=\left[x_{1},x_{2},\cdots,x_{d}\right]\in\mathbb{R}^{1\times d}$,
+the \textbf{\emph{simplest linear scheme}} uses \textbf{\emph{each
+variable directly}} as a basis function \textcolor{blue}{along with}
+a constant function, setting $\phi_{0}\left(\mathbf{x}\right)=1$
+and $\phi_{i}\left(\mathbf{x}\right),\ 0\leq i\leq d.$ However, most
+interesting value functions are too complex to be represented this
+way.
+\item This scheme was therefore generalized to the polynomial basis
+\[
+\phi_{i}\left(\mathbf{x}\right)=\prod_{j=1}^{d}x_{j}^{c_{i,j}}=x_{1}^{c_{i,1}}x_{2}^{c_{i,2}},\cdots,x_{d}^{c_{i,d}}\in\mathbb{R}^{\left(n+1\right)^{d}},
+\]
+where each $c_{i,j}$ is an integer between $0$ and $n$. We describe
+such a basis as an order $n$ polynomial basis. For example, a 2nd
+order polynomial basis defined over two state variables $x$ and $y$
+would have feature vector:
+\[
+\Phi=\left[1,x,y,xy,x^{2},y^{2},x^{2}y,xy^{2},x^{2}y^{2}\right].
+\]
+
+\end{enumerate}
+
+\subsubsection{Radial Basis Function\ \cite{George_2011_AAAI_ValueApproxViaFourier}}
+\begin{enumerate}
+\item RBF definition: another common common scheme for state vector $\mathbf{x}\in\mathbb{R}^{d}$;
+the basic function is a Gaussian: 
+\[
+\phi_{i}\left(\mathbf{x}\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\frac{\|\mathbf{c}_{i}-\mathbf{x}\|_{2}^{2}}{2\sigma^{2}}\right),
+\]
+or a given collection of centers $\mathbf{c}_{i}$ and variance $\sigma^{2}$.
+
+\begin{enumerate}
+\item the centers $c_{i}$ are typically evenly along each dimension, leading
+to $n^{d}$ centers for $d$ state variables and a\textbf{ }given
+order $n$. 
+\item $\sigma^{2}$ can be varied but is often set to $\frac{2}{n-1}$
+\end{enumerate}
+\item RBF's characteristics
+
+\begin{enumerate}
+\item RBFs only\textbf{\emph{ }}generalize locally—changes in one area of
+the state space do not affect the entire state space. 
+\item Thus, they are suitable for representing value functions that might
+have discontinuities.
+\item However, this limited generalization is often reflected in slow initial
+performance. key\index{key}
+\end{enumerate}
+\end{enumerate}
+\bibliographystyle{IEEEtran}
+\phantomsection\addcontentsline{toc}{section}{\refname}\bibliography{F:/important/bibFiles/referenceBib}
+
+\end{document}
