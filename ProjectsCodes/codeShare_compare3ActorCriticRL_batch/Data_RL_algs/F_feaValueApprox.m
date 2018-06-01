@@ -1,4 +1,4 @@
- function hotN = F_feaValueApprox (fotN, atN, Lho)
+    function hotN = F_feaValueApprox (fotN, atN, Lho)
 % Breif:
 %   Construt the final features for the critic (value) function based on
 %   the input basic feature vectors simultaneously for all the N samples.
