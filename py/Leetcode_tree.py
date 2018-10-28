@@ -4,7 +4,6 @@ class TreeNode(object):
     self.left = None
     self.right = None
 
-
 class ListNode(object):
   def __init__(self, x):
     self.val = x
@@ -38,22 +37,23 @@ class Solution(object):
       self.z101_helper(p.right, q.left)
       )
 
-  def n101_isSymmetricTree2(self, node):
-    if not node: return True
 
-    stack = [(node.left, node.right)]
-    while stack:
-      x, y = stack.pop()
-      if not x and not y:
-        continue
-      if not x or not y:
-        return False
-      if x.val != y.val:
-        return False
 
-      stack.append((x.left, y.right))
-      stack.append((x.right, y.left))
-    return True
+  def n101_isSymmetricTree2(self, root):
+  	if not root: return True
+
+  	stack = [(root.left, root.right)]
+  	while stack:
+  		x, y = stack.pop()
+  		if not x and not y:
+  			continue
+  		elif not x or not y:
+  			return False
+  		elif x.val != y.val:
+  			return False
+  		stack.append((x.left, y.right))
+  		stack.append((x.right, y.left))
+  	return True
 
 
 
@@ -64,25 +64,24 @@ class Solution(object):
     right = self.n104_maxDepth(node.right)
     return 1 + max(left, right)
 
+class Solution(object):
+	def n108_sortedTree2BST_2(self, nums): # 👍👍 save space
+		if not nums: return None
+		return self.helper(nums, 0, len(nums)-1)
 
+	def helper(nums, l, r):
+		if l > r: return None
+		m = l + ((r -l) >> 1)
+		root = TreeNode(nums[m])
+		root.left = self.helper(nums, l, m-1)
+		root.right = self.helper(nums, m+1, r)
+		return root
 
-  def n108_sortedTree2BST_2(self, nums): # 👍👍 save space
-    if not nums: return None
-    return self.z108_helper(nums, 0, len(nums)-1)
-
-  def z108_helper(self, num, l, r):
-    if l > r: return None
-
-    m = l + (r - l) / 2
-    node = TreeNode(nums[m])
-    node.left = self.z108_helper(nums, l, m - 1)
-    node.right = self.z108_helper(nums, m + 1, r)
-    return node
 
   def n108_sortedTree2BST(self, nums):
     if not nums: return None
 
-    k = len(nums) // 2
+    k = len(nums) >> 1
     node = TreeNode(nums[k])
     node.left = self.n108_sortedTree2BST(nums[:k])
     node.right = self.n108_sortedTree2BST(nums[k+1:])
@@ -232,7 +231,6 @@ class Solution(object):
     return rst
 
 
-
 class Solution(object):
 # 107.easy-Binary Tree Level Order Traversal II
 # 题意, 包含三层意思:
@@ -247,7 +245,7 @@ class Solution(object):
       n, tmp = len(q), []
       for i in range(n):
         node = q.popleft()
-        q.append(node.val)
+        tmp.append(node.val)
         if node.left: q.append(node.left)
         if node.right: q.append(node.right)
       rst.append(tmp)
@@ -272,6 +270,27 @@ class Solution(object):
       k = -k
     return rst
 
+class Solution(object): # 👍👍👍
+# 314.med-Binary Tree Vertical Order Traversal
+# 题意: Given a binary tree, return the vertical order traversal of its nodes' values.
+# (ie, from top to bottom, column by column).
+	def verticalOrder(self, root):
+		if not root: return []
+
+		stack = [(root, 0)]
+		minIdx = (1<<31) -1
+		maxIdx = -(1>>31)
+		while stack:
+			node, idx = stack.pop()
+			minIdx = min(minIdx, idx)
+			maxIdx = max(maxIdx, idx)
+			rst.append((idx, node.val))
+
+			if node.right: stack.append((node.right, idx+1))
+			if node.left: stack.append((node.left, idx-1))
+
+		bucket = [[] for i in range(minIdx
+			)]
 
 
 
